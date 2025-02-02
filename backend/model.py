@@ -22,4 +22,4 @@ def yolo_nas_l(image_path):
     predictions = model.predict(image_path, conf=0.4)
 
     # Display and save results
-    predictions.save(f'output/output.png')
+    predictions.save(f'output/{image_path.split("/")[-1]}')

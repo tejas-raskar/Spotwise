@@ -17,7 +17,7 @@ async def upload_image(image: UploadFile = File(...)):
 
         yolo_nas_l(f"input/{image.filename}")
 
-        return FileResponse(f"output/output.png", media_type="image/png")
+        return FileResponse(f"output/{image.filename}", media_type="image/png")
 
     except Exception as e:
         print(f"Error uploading image: {e}") # Important for debugging
